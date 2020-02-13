@@ -7,9 +7,20 @@ print('Antwoord: ',antwoord)
 
 def alg():
     combi_lijst = gen()
-    gok = random.choice(combi_lijst) # eerste gok
-    print('Gok: ',gok)
-    feedback(gok,antwoord)
+    eerste_gok = random.choice(combi_lijst) # eerste gok
+    print('Gok: ',eerste_gok)
+    eerste_feedback = feedback(eerste_gok,antwoord)
+    print('eerste feedback: ',eerste_feedback)
+
+    for combinatie in combi_lijst:
+        feedback_combi = feedback(combinatie,eerste_gok)
+        if feedback_combi == eerste_feedback:
+            combi_lijst.remove(combinatie)
+
+    print(combi_lijst)
+
+
+
 
 
 
