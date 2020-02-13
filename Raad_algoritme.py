@@ -1,4 +1,18 @@
+from Feedback import feedback
 import random
+
+antwoord = [1,1,2,1]
+print('Antwoord: ',antwoord)
+
+
+def alg():
+    combi_lijst = gen()
+    gok = random.choice(combi_lijst) # eerste gok
+    print('Gok: ',gok)
+    feedback(gok,antwoord)
+
+
+
 def gen():
     lijst = []
     fout = 0
@@ -13,15 +27,16 @@ def gen():
         else:
             lijst.append(combinatie)
         if len(lijst) == 1296: #aantal mogelijke combinaties
-            print('klaar')
             break
     lijst.sort(key=lambda x: x[0])
-
-
-    print(lijst,'\nlengte:',len(lijst),'\nkeren opnieuw:',fout)
-
-gen()
+    """SORTEREN AFMAKEN"""
+    return(lijst)
 
 
 
 
+
+
+
+
+alg()

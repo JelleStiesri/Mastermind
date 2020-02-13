@@ -15,7 +15,7 @@ def feedback(gok, antwoord):
 
 
 
-def gok():
+"""def gok():
     gok = []
     while True:  # True todat user goede code geeft
         getallen = input("Gok: ")
@@ -30,7 +30,7 @@ def gok():
     feedback(gok, [3, 7, 2, 3])
 
 
-print(feedback([1, 7, 3, 2], [3, 7, 2, 3]))
+print(feedback([1, 7, 3, 2], [3, 7, 2, 3]))"""
 
 
 #while True:
