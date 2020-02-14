@@ -1,4 +1,29 @@
-import random
+def plop():
+    wit = 1
+    zwart = 2
+
+    return zwart, wit
+
+def tok():
+    wit = 0
+    zwart = 2
+
+    return zwart, wit
+
+def tik():
+    feedback = plop()
+    feed = tok()
+    print(feedback, feed)
+    if feedback == feed:
+        print('hoi')
+tik()
+
+
+
+
+
+
+"""import random
 def gen():
     lijst = []
     fout = 0
@@ -20,7 +45,7 @@ def gen():
 
     print(lijst,'\nlengte:',len(lijst),'\nkeren opnieuw:',fout)
 
-gen()
+gen()"""
 
 
 

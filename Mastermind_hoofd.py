@@ -11,9 +11,6 @@ def menu():
     elif keuze == 2:
         spelercode()
 
-
-
-
 def spelercode():
     antwoord = []
     while True:  # True todat user goede code geeft
@@ -35,7 +32,7 @@ def computercode():
     spelerraad(antwoord)
 
 def spelerraad(antwoord):
-    print(antwoord)
+    print(''.join(antwoord))
     max_pogingen = 10 #max aantal pogingen
     aantal_pogingen = 0 #aantal pogingen dat de speler heeft gedaan
 
