@@ -9,7 +9,7 @@ def alg():
     geraden = False
     combi_lijst = gen()
     eerste_gok = random.choice(combi_lijst)  # eerste gok
-    
+
     print('Gok: ',eerste_gok)
 
     eerste_feedback = feedback(eerste_gok,antwoord)
