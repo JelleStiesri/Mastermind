@@ -1,22 +1,26 @@
-def plop():
-    wit = 1
-    zwart = 2
+while len(combi_lijst) != 1:
+    nieuwe_lijst = []
 
-    return zwart, wit
+    for combinatie in combi_lijst:
+        nieuwe_feedback = feedback(combinatie, nieuwe_gok)
+        if nieuwe_feedback == oude_feedback:
+            nieuwe_lijst.append(combinatie)
+            print(combinatie, nieuwe_feedback)
+        else:
+            combi_lijst.remove(combinatie)
+    combi_lijst = nieuwe_lijst
+    oude_feedback = nieuwe_feedback
+    print("lengte van lijst: ", len(combi_lijst))
 
-def tok():
-    wit = 0
-    zwart = 2
+    nieuwe_gok = random.choice(combi_lijst)
+    oude_feedback = feedback(nieuwe_gok, antwoord)
+    print(nieuwe_gok, oude_feedback)
 
-    return zwart, wit
+import itertools
 
-def tik():
-    feedback = plop()
-    feed = tok()
-    print(feedback, feed)
-    if feedback == feed:
-        print('hoi')
-tik()
+
+
+
 
 
 

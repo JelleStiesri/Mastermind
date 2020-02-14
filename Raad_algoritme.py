@@ -1,38 +1,31 @@
 from Feedback import feedback
 import random
 
-antwoord = [1,1,2,1]
+antwoord = [3,6,2,3]
 print('Antwoord: ',antwoord)
 
 
 def alg():
+    geraden = False
     combi_lijst = gen()
     eerste_gok = random.choice(combi_lijst)  # eerste gok
+    
     print('Gok: ',eerste_gok)
+
     eerste_feedback = feedback(eerste_gok,antwoord)
+
     print('eerste feedback: ',eerste_feedback)
+    print("lengte van lijst (0): ", len(combi_lijst))
 
-    print("lengte van lijst: ", len(combi_lijst))
-    tijd = 0
-    nieuwe_lijst = []
-    for combinatie in combi_lijst:
+    vergelijken(combi_lijst, eerste_gok, eerste_feedback)
 
-        tweede_feedback = feedback(combinatie,eerste_gok)
-        if tweede_feedback == eerste_feedback:
-            tijd += 1
-            print(tijd,tweede_feedback)
-            nieuwe_lijst.append(combinatie)
-        else:
-            combi_lijst.remove(combinatie)
+
+def vergelijken(combi_lijst, gok, eerste_feedback):
+     print()
 
 
 
 
-
-    print("lengte van lijst 2e: ", len(nieuwe_lijst))
-    print(tijd)
-    tweede_gok = random.choice(combi_lijst)
-    print('Gok: ',tweede_gok)
 
 
 
@@ -61,10 +54,6 @@ def gen(): # Maakt een lijst met alle mogelijke combinaties van de cijfers 1/6 e
     lijst.sort(key=lambda x: x[0])
     """SORTEREN AFMAKEN"""
     return(lijst)
-
-
-
-
 
 
 
