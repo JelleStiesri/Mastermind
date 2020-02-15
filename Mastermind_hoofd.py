@@ -1,5 +1,9 @@
 import random
 
+from Raad_algoritme import alg
+
+alg()
+
 
 
 def menu():

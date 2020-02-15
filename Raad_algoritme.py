@@ -1,27 +1,35 @@
 from Feedback import feedback
 import random
 
-antwoord = [3,6,2,3]
-print('Antwoord: ',antwoord)
 
 
-def alg():
-    geraden = False
-    combi_lijst = gen()
-    eerste_gok = random.choice(combi_lijst)  # eerste gok
 
-    print('Gok: ',eerste_gok)
+def alg(antwoord,combi_lijst):
+    print('Antwoord = ', antwoord)
+    gok = random.choice(combi_lijst)  # eerste gok
+    nieuwe_feedback = feedback(gok, antwoord)
 
-    eerste_feedback = feedback(eerste_gok,antwoord)
+    tijd = 0
+    while len(combi_lijst) != 1:
+        tijd += 1
+        combi_lijst = vergelijken(combi_lijst, gok, nieuwe_feedback)
+        gok = random.choice(combi_lijst)
+        #print("Nieuwe gok:",gok)
+        nieuwe_feedback = feedback(gok,antwoord)
+    oplossing = combi_lijst[0]
+    print('Aantal zetten', tijd, '---', 'Antwoord =', combi_lijst[0],'\n')
+    return oplossing, tijd
 
-    print('eerste feedback: ',eerste_feedback)
-    print("lengte van lijst (0): ", len(combi_lijst))
 
-    vergelijken(combi_lijst, eerste_gok, eerste_feedback)
+def vergelijken(combi_lijst, gok, oude_feedback):
+    nieuwe_lijst = [] #Tijdelijk
+    for combinatie in combi_lijst:
+        nieuwe_feedback = feedback(combinatie, gok)
+        if nieuwe_feedback == oude_feedback:
+            nieuwe_lijst.append(combinatie)
+    combi_lijst = nieuwe_lijst
 
-
-def vergelijken(combi_lijst, gok, eerste_feedback):
-     print()
+    return combi_lijst
 
 
 
@@ -55,7 +63,16 @@ def gen(): # Maakt een lijst met alle mogelijke combinaties van de cijfers 1/6 e
     """SORTEREN AFMAKEN"""
     return(lijst)
 
+def test():  #Test de gemiddelde snelheid
+    pogingen = 100 # Verander deze om de gemiddelde snelheid te berekenen voor een bepaald aantal keer
+    keer = 0
+    totaal = 0
 
+    lst = gen()
+    while keer != pogingen:
+        ans, tijd = alg(random.choice(lst),lst)
+        keer += 1
+        totaal += tijd
+    print('gem',totaal/keer)
 
-
-alg()
+#test()

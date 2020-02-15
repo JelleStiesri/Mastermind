@@ -43,7 +43,7 @@ def gok():
             break
     feedback(gok,[3, 7, 2, 3])
     #feedback(gok, [3, 7, 2, 3])
-    """OPLOSSEN: feedback is 2,1 als je 3433 invult"""
+
 
 #print(feedback([1, 7, 3, 2], [3, 7, 2, 3]))
 

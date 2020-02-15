@@ -3,6 +3,10 @@ while len(combi_lijst) != 1:
 
     for combinatie in combi_lijst:
         nieuwe_feedback = feedback(combinatie, nieuwe_gok)
+        """print('Gok: ',gok)
+        print('eerste feedback: ',nieuwe_feedback)
+        print("lengte van lijst (0): ", len(combi_lijst))
+        print('--------------------------------')"""
         if nieuwe_feedback == oude_feedback:
             nieuwe_lijst.append(combinatie)
             print(combinatie, nieuwe_feedback)
